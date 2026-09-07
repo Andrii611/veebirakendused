@@ -1,0 +1,33 @@
+h1{
+    font-size: larger;
+    font-family: Russia, sans-serif;
+    color: tan; /*tektsi värv*/
+    background-color: black;
+
+}
+Header h1{
+    padding: 5%;
+    background-color: gray; /*tausta värv*/
+    font-variant: small-caps;
+    border: 2px dotted green;
+}
+Header{
+    background-image: url('Amg_Stechkin.png')
+}
+footer{
+    padding: 5%;
+    background-color: gray; /*tausta värv*/
+    font-variant: small-caps;
+}
+section{
+    border: 2px solid gray; /*solid, double, dashed, dotted*/
+    width: 25%;
+    margin: 2px;
+    padding: 1%;
+    border-radius: 20px;
+}
+img{
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+}
