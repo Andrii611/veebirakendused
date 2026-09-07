@@ -1,6 +1,6 @@
 h1{
     font-size: larger;
-    font-family: Russia, sans-serif;
+    font-family: Georgia, sans-serif;
     color: tan; /*tektsi värv*/
     background-color: black;
 
@@ -14,6 +14,12 @@ Header h1{
 Header{
     background-image: url('Amg_Stechkin.png')
 }
+header img{
+    width: 80px;
+    height: 80px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
 footer{
     padding: 5%;
     background-color: gray; /*tausta värv*/
@@ -21,13 +27,67 @@ footer{
 }
 section{
     border: 2px solid gray; /*solid, double, dashed, dotted*/
-    width: 25%;
     margin: 2px;
     padding: 1%;
     border-radius: 20px;
+}
+.media{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 10px;
+}
+
+#pildigalerii{
+    grid-column: 1;
+    grid-row: 1 / 4;
+}
+
+#video{
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#kaart{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#muusika{
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#pildigalerii img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin: 5px;
 }
 img{
     width: 200px;
     height: 200px;
     border: 2px solid black;
+}
+nav{
+    background-color: lightgray;
+    border: 2px solid gray;
+    border-radius: 15px;
+    padding: 10px;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+}
+nav a{
+    padding: 7px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    background-color: ghostwhite;
+    transition: 0.2s;
+}
+
+nav a:hover{
+    background-color: deepskyblue;
 }
