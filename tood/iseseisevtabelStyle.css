@@ -1,0 +1,61 @@
+table {
+    border-collapse: collapse;
+    width: 400px;
+    height: 100px;
+}
+
+td {
+    border: 1px solid black;
+    text-align: center;
+    font-size: 30px;
+    width: 100px;
+    height: 80px;
+}
+
+.a{
+    background-color: red;
+}
+
+.b{
+    background-color: orange;
+}
+
+.c{
+    background-color: yellow;
+}
+
+.d{
+    background-color: green;
+}
+
+.e{
+    background-color: lightblue;
+}
+
+.f{
+    background-color: pink;
+}
+
+.g{
+    background-color: violet;
+}
+
+.odin{
+    background-color: brown;
+}
+
+.plus{
+    background-color: aqua;
+}
+
+.dva{
+    background-color: grey;
+}
+
+.tri{
+    background-color: lime;
+}
+
+.pusto{
+    background-color: purple;
+}
