@@ -52,27 +52,22 @@
     background-color: red;
 }
 
-/* vasak osa */
 #taani td:nth-child(1) {
     width: 105px;
 }
 
-/* valge vertikaalne joon */
 #taani td:nth-child(2) {
     width: 35px;
 }
 
-/* parem osa */
 #taani td:nth-child(3) {
     width: 190px;
 }
 
-/* ülemine osa */
 #taani tr:nth-child(1) {
     height: 87px;
 }
 
-/* valge horisontaalne joon */
 #taani tr:nth-child(2) {
     height: 36px;
 }
@@ -86,4 +81,32 @@
 #taani tr:nth-child(1) td:nth-child(2),
 #taani tr:nth-child(3) td:nth-child(2) {
     background-color: white;
+}
+
+/* itaalia lipp */
+
+#itaalia {
+    width: 330px;
+    height: 210px;
+    margin-top: 70px;
+    border-spacing: 0;
+    table-layout: fixed;
+    outline: 2px solid black;
+}
+
+#itaalia td {
+    border: none;
+    padding: 0;
+}
+
+#itaalia td:nth-child(1) {
+    background-color: green;
+}
+
+#itaalia td:nth-child(2) {
+    background-color: white;
+}
+
+#itaalia td:nth-child(3) {
+    background-color: red;
 }
