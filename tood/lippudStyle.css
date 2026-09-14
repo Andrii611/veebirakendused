@@ -1,0 +1,89 @@
+#lipudBlock {
+    position: absolute;
+    top: 20px;
+    left: 45%;
+    text-align: center;
+}
+#lipud {
+    text-align: center;
+}
+
+/* Eesti lipp */
+
+#eesti {
+    width: 330px;
+    height: 210px;
+    border-spacing: 0;
+    margin: 0 auto;
+    outline: 2px solid black;
+}
+
+#eesti td {
+    border: none;
+    padding: 0;
+}
+
+#eesti tr:nth-child(1) {
+    background-color: blue;
+}
+
+#eesti tr:nth-child(2) {
+    background-color: black;
+}
+
+#eesti tr:nth-child(3) {
+    background-color: white;
+}
+
+/* Taani lipp */
+
+#taani {
+    width: 330px;
+    height: 210px;
+    border-spacing: 0;
+    table-layout: fixed;
+    margin: 100px auto 0 auto;
+    outline: 2px solid black;
+}
+
+#taani td {
+    border: none;
+    padding: 0;
+    background-color: red;
+}
+
+/* vasak osa */
+#taani td:nth-child(1) {
+    width: 105px;
+}
+
+/* valge vertikaalne joon */
+#taani td:nth-child(2) {
+    width: 35px;
+}
+
+/* parem osa */
+#taani td:nth-child(3) {
+    width: 190px;
+}
+
+/* ülemine osa */
+#taani tr:nth-child(1) {
+    height: 87px;
+}
+
+/* valge horisontaalne joon */
+#taani tr:nth-child(2) {
+    height: 36px;
+}
+
+#taani tr:nth-child(3) {
+    height: 87px;
+}
+#taani tr:nth-child(2) td {
+    background-color: white;
+}
+#taani tr:nth-child(1) td:nth-child(2),
+#taani tr:nth-child(3) td:nth-child(2) {
+    background-color: white;
+}

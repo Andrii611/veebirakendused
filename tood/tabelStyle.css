@@ -1,0 +1,38 @@
+table#lihtne1 {
+    border: 1px solid black;
+    width: 30%;
+    height: 100px;
+    text-align: center;
+}
+
+#lihtne1 td,
+#keeruline1 td,
+#keeruline2 td {
+    border: 1px solid black;
+}
+
+table#keeruline1 {
+    border: 1px solid black;
+    width: 100px;
+    height: 200px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+table#keeruline2 {
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+table#keeruline2 td {
+    vertical-align: top;
+    border: 1px solid darkolivegreen;
+}
+
+.nimia {
+    border: 1px solid black;
+    background-color: silver;
+}
