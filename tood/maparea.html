@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Map area</title>
 </head>
 <body>
-$END$
+<h1>Map area kasutamine </h1>
+    <img src="arvutipilt.jpg" alt="arvuti pilt" usemap="#arvuti">
+    <map name="arvuti">
+        <area shape="circle" coords="256, 158, 40"
+              href="https://arvutitark.ee/" alt="arvuti">
+        <!--circle coords=(x, y, R)-->
+        <area shape="rect" coords="6, 56, 195, 108"
+              href="https://arvutitark.ee/ru/pc-components/power-supplies-psu/case-psu-atx23-500wxn052-xilence-1009286" alt="toiteblok">
+        <!--rect coords="x, y, x1, y2"-->
+        <!--kolmnurk - poly - tuleb võta kõik koordinadid vasakult parema-->
+        <area shape="poly" coords="364, 74, 292, 333, 372, 360"
+              href="https://arvutitark.ee/arvutikomponendid/korpused/kolink-inspire-k2-plus-argb-micro-atx-gehause-tempered-glas-1281228" alt="Korpus">
+        <!-- Ülesanne. Lisa kokku 5-6 pildiala, mis linkivad teisele failile sama sisuga
+        css kujundus lisa ise-->
+        <area shape="rect" coords="154, 117, ">
+
+</map>
+
 </body>
 </html>
