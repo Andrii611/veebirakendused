@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>Monitor</title>
+    <link rel="stylesheet" href="mapStyle.css">
+</head>
+
+<body>
+
+<h1>Map area kasutamine</h1>
+
+<div class="sisu">
+
+    <div class="vasak">
+        <img class="arvutipilt"
+             src="Pildid/Toolaud.jpg"
+             alt="Arvuti pilt"
+             usemap="#arvuti">
+    </div>
+
+    <div class="parem">
+        <h2>Klaviatuur</h2>
+
+        <p>
+            Klaviatuur on arvuti sisendseade.
+            Selle abil saab kirjutada teksti ja anda arvutile erinevaid käske.
+            Klaviatuuril on tähed, numbrid ja erinevad funktsiooniklahvid.
+        </p>
+
+        <img class="illustratsioon"
+             src="Pildid/Klaviatuur.jpg"
+             alt="Klaviatuur">
+    </div>
+
+</div>
+
+<map name="arvuti">
+
+    <area shape="rect"
+          coords="190,510,470,745"
+          href="monitor.html"
+          alt="Monitor">
+
+    <area shape="poly"
+          coords="520,535,735,535,735,790,520,790"
+          href="arvuti.html"
+          alt="Arvuti">
+
+    <area shape="poly"
+          coords="220,765,405,765,420,850,210,850"
+          href="klaviatuur.html"
+          alt="Klaviatuur">
+
+    <area shape="circle"
+          coords="495,760,35"
+          href="hiir.html"
+          alt="Hiir">
+
+    <area shape="circle"
+          coords="465,690,55"
+          href="korvaklapid.html"
+          alt="Kõrvaklapid">
+
+    <area shape="rect"
+          coords="550,475,650,535"
+          href="kell.html"
+          alt="Kell">
+
+</map>
+
+</body>
+</html>

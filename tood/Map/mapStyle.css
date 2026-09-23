@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: whitesmoke;
+}
+
+h1 {
+    font-size: 32px;
+    color: darkblue;
+}
+
+.sisu {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+/* Левая часть */
+.vasak {
+    width: 736px;
+}
+
+/* Главная фотография */
+.arvutipilt {
+    width: 736px;
+    height: auto;
+    border: 2px solid black;
+}
+
+/* Правая часть */
+.parem {
+    width: 500px;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid gray;
+}
+
+/* Название предмета */
+.parem h2 {
+    font-size: 32px;
+    color: darkblue;
+    margin-top: 0;
+}
+
+/* Информация */
+.parem p {
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+/* Иллюстрация предмета */
+.illustratsioon {
+    width: 400px;
+    height: auto;
+    margin-top: 20px;
+    border: 2px solid black;
+}
+
+/* Ссылки */
+a {
+    font-size: 20px;
+    color: darkblue;
+}
