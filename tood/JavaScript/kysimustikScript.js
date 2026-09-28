@@ -30,6 +30,25 @@ function radioValik(){
 
     return valik;
 }
+function radioValik2(){
+    let vastus8=document.getElementById("vastus8");
+    let jah =document.getElementById("jah");
+    let ei =document.getElementById("ei");
+
+    let valik3="";
+    if(jah.checked){
+        valik3=jah.value;
+    } else if(ei.checked){
+        valik3=ei.value;
+    } else {
+        valik3="Palun tee ome valik";
+    }
+
+    //vastus
+    vastus8.innerHTML="valik: " + valik3;
+
+    return valik3;
+}
 //checkbox valik
 function checkboxValik(){
     let vastus3=document.getElementById("vastus3");
@@ -68,23 +87,51 @@ function rangeValik(){
 function selectValik() {
     let vastus5=document.getElementById("vastus5");
     let stiil=document.getElementById("stiil");
+
+    if(stiil.selectedIndex!==0){
+        vastus5.innerHTML="Stiil: " + stiil.value;
+
+        return stiil.value;
+    }
 }
 //kasutab teisi funktsioone
-function naitaKoike(){
-    let vastusKoik=document.getElementById("vastusKoik");
-    let nimi = nimiLugemineKastis()
-    let valik=radioValik();
-    let valik2=checkboxValik();
-    let tund=rangeValik();
 
-    vastusKoik.innerText="Sinu nimi on:" +nimi+'<br>'+
-        'Sinu lemmikud on : ' + valik2 + '<br>'+
-        'Sa kasutad '+valik +'<br> +' +
-        'Sa kuuled '+tund+' tundi';
+function arvamusLugemineKastis(){
+    let vastus10 = document.getElementById("vastus10");
+    let arvamus = document.getElementById("arvamus");
+
+    vastus10.innerHTML = "Sinu arvamus: " + arvamus.value;
+
+    return arvamus.value;
 }
+
+function raadiojaamValik(){
+    let vastus9=document.getElementById("vastus9");
+    let raadiojaam=document.getElementById("raadiojaam");
+
+    vastus9.innerHTML="raadiojaam:" + raadiojaam.value;
+    return raadiojaam.value;
+}
+
 function puhasta(){
     vastus1.innerHTML="";
     vastus2.innerHTML="";
     vastus3.innerHTML="";
     vastusKoik.innerHTML="";
 }
+function naitaKoike(){
+    let vastusKoik=document.getElementById("vastusKoik");
+    let nimi = nimiLugemineKastis();
+    let valik=radioValik();
+    let valik2=checkboxValik();
+    let tund=rangeValik();
+    let valik3=radioValik2();
+    let raadiojaam =raadiojaamValik();
+
+    vastusKoik.innerHTML="Sinu nimi on:" +nimi+'<br>'+
+        'Sinu lemmikud on : ' + valik2 + '<br>'+
+        'Sa kasutad '+valik +'<br> +' +
+        'Sa kuuled '+tund+' tundi' + '<br>' +
+        valik3 +'<br>' +raadiojaam +'<br>';
+}
+

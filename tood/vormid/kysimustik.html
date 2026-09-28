@@ -109,15 +109,48 @@
             </td>
 
         </tr>
+        <tr>
+            <td>
+                <label>Kas sa kuulad raadiot?</label>
+            </td>
+
+            <td>
+                <input type="radio" name="raadioValik" id="jah" value="jah" onclick="radioValik2()">
+                <label for="jah">Jah</label>
+
+                <input type="radio" name="raadioValik" id="ei" value="ei" onclick="radioValik2()">
+                <label for="ei">Ei</label>
+
+            </td>
+            <td>
+                <div id="vastus8"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="raadiojaam">Milliseid raadiojaamu oskad nimetada?</label>
+            </td>
+            <td>
+                <input type="text" name="raadiojaam" id="raadiojaam" placeholder="shanson" oninput="raadiojaamValik()">
+            </td>
+
+            <td>
+                <div id="vastus9"></div>
+            </td>
+        </tr>
 
         <tr>
             <td>
-                <input type="Button" value="Puhasta" onclick="puhasta()">
+                <input type="reset" value="Puhasta" onclick="puhasta()">
             </td>
             <td>
-                <input type="Button" value="Naita" onclick="naitaKoike()">
+                <input type="button" value="Naita" onclick="naitaKoike()">
+            </td>
+            <td>
+                <div id="vastusKoik"></div>
             </td>
         </tr>
+
     </table>
     <br>
 </form>
