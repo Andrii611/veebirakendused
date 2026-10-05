@@ -31,7 +31,6 @@ function radioValik(){
 
     //vastus
     vastus2.innerHTML="valik: " + valik;
-
     return valik;
 }
 function radioValik2(){

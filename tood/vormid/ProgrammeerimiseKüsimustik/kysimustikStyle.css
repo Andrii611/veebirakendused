@@ -1,0 +1,16 @@
+form{
+    text-align:left;
+    border-radius: 30px;
+}
+table, td{
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 35%;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: lightseagreen;
+}
+label{
+    font-weight: bold;
+
+}

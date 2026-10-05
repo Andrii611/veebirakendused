@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Programmeerimise küsimustik</title>
+  <link rel="stylesheet" href="kysimustikStyle.css">
+  <script src="ProgrammeerimiseScript.js"></script>
+</head>
+<body>
+<table>
+  <h1>Programmeerimise küsimustik</h1>
+  <tr>
+    <td>
+      <fieldset>
+        <legend>Tee oma valik - lemmik programmeerimiskeel</legend>
+
+        <input type="checkbox" name="lemmik" id="PHP" value="PHP" onclick="programmeerimiskeeliCheckbox()">
+        <label for="PHP">PHP</label>
+        <br>
+
+        <input type="checkbox" name="lemmik" id="Java" value="Java" onclick="programmeerimiskeeliCheckbox()">
+        <label for="Java">Java</label>
+        <br>
+
+        <input type="checkbox" name="lemmik" id="JavaScript" value="JavaScript" onclick="programmeerimiskeeliCheckbox()">
+        <label for="JavaScript">JavaScript</label>
+        <br>
+
+        <input type="checkbox" name="lemmik" id="Python" value="Python" onclick="programmeerimiskeeliCheckbox()">
+        <label for="Python">Python</label>
+        <br>
+
+      </fieldset>
+    </td>
+    <td>
+      <div id="vastus1"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label for="arvamus">Mida arvad programmeerimise õppimisest?</label>
+    </td>
+    <td>
+      <input type="text" name="arvamus" id="arvamus" placeholder="" oninput="programmeerimiseOppimisest()"
+    </td>
+    <td>
+      <div id="vastus2"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label for="tund">
+        Mitu tundi nädalas tegeled programmeerimisega?
+      </label>
+    </td>
+    <td>
+      0<input type="range" id="tund" min="0" max="50" onchange="rangeValik()">50
+    </td>
+    <td>
+      <div id="vastus3"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label>Kas sulle meeldib programmeerida?</label>
+    </td>
+    <td>
+      <input type="radio" name="programmeeridaValik" id="jah" value="jah" onclick="programmeeridaValik()">
+      <label for="jah">Jah</label>
+
+      <input type="radio" name="programmeeridaValik" id="ei" value="ei" onclick="programmeeridaValik()">
+      <label for="ei">Ei</label>
+    </td>
+    <td>
+      <div id="vastus4"></div>
+      <img src="" alt="" id="pilt">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="reset" value="Puhasta" onclick="Puhasta()">
+    </td>
+  </tr>
+</table>
+
+
+</body>
+</html>
