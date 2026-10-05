@@ -13,14 +13,18 @@ function radioValik(){
     let spotify=document.getElementById("spotify");
     let raadio=document.getElementById("raadio");
     let vinyl=document.getElementById("vinüülplaat");
+    let pilt=document.getElementById("pilt");
 
     let valik=""
     if(spotify.checked){
         valik=spotify.value;
+        pilt.src="images/spotify.png";
     } else if(raadio.checked){
         valik=raadio.value;
+        pilt.src="images/raadio.jpg";
     } else if(vinyl.checked){
         valik=vinyl.value;
+        pilt.src="images/vinüülplaat.jpg";
     } else {
         valik="palun tee ome valik";
     }

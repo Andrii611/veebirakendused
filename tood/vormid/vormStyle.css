@@ -24,3 +24,8 @@ input[type=radio]:hover, input[type=radio]:focus {
     border-radius: 4px;
     padding: 1%;
 }
+img {
+    border: 2px solid burlywood;
+    border-radius: 30px;
+    width: 100px;
+}
