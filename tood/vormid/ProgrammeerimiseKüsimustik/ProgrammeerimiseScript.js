@@ -35,7 +35,7 @@ function rangeValik() { //3.
 
     vastus3.innerHTML = "Tegeled programmeerimisega " + tund.value + " tundi nädalas";
 }
-function programmeeridaValik() { 4//
+function programmeeridaValik() { //4
     let vastus4=document.getElementById("vastus4");
     let jah =document.getElementById("jah");
     let ei =document.getElementById("ei");
@@ -56,10 +56,59 @@ function programmeeridaValik() { 4//
 
     return valik2;
 }
-function Puhasta(){ //puhasta
-    vastus1.innerHTML="";
-    vastus2.innerHTML="";
-    vastus3.innerHTML="";
-    vastus4.innerHTML="";
-    pilt.src="";
+function tooriistadValik() { //5.
+    let vastus5 = document.getElementById("vastus5");
+    let tooriistad = document.getElementById("tooriistad");
+
+    vastus5.innerHTML = "Sinu nimetatud tööriistad: " + tooriistad.value;
+
+    return tooriistad.value;
+}
+
+function keelValik() { //6.
+    let vastus6 = document.getElementById("vastus6");
+    let keel = document.getElementById("keel");
+
+    vastus6.innerHTML = "Sinu valik: " + keel.value;
+
+    return keel.value;
+}
+function Saada() {
+    let kokkuvote = document.getElementById("kokkuvote");
+
+    let vastus = "";
+
+    vastus += "Programmeerimiskeeled: " + programmeerimiskeeliCheckbox() + "<br>";
+    vastus += "Arvamus: " + programmeerimiseOppimisest() + "<br>";
+    vastus += "Tunnid nädalas: " + document.getElementById("tund").value + "<br>";
+    vastus += "Kas meeldib programmeerida: " + programmeeridaValik() + "<br>";
+    vastus += "Tööriistad: " + tooriistadValik() + "<br>";
+    vastus += "Soovitud programmeerimiskeel: " + keelValik();
+
+    kokkuvote.innerHTML = vastus;
+}
+function Puhasta() { //puhasta
+    document.getElementById("vastus1").innerHTML = "";
+    document.getElementById("vastus2").innerHTML = "";
+    document.getElementById("vastus3").innerHTML = "";
+    document.getElementById("vastus4").innerHTML = "";
+    document.getElementById("vastus5").innerHTML = "";
+    document.getElementById("vastus6").innerHTML = "";
+    document.getElementById("kokkuvote").innerHTML = "";
+
+    document.getElementById("pilt").src = "";
+
+    document.getElementById("arvamus").value = "";
+    document.getElementById("tooriistad").value = "";
+
+    document.getElementById("tund").value = 0;
+    document.getElementById("keel").selectedIndex = 0;
+
+    document.getElementById("PHP").checked = false;
+    document.getElementById("Java").checked = false;
+    document.getElementById("JavaScript").checked = false;
+    document.getElementById("Python").checked = false;
+
+    document.getElementById("jah").checked = false;
+    document.getElementById("ei").checked = false;
 }

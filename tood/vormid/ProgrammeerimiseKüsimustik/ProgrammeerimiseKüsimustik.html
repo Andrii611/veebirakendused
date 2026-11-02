@@ -7,8 +7,8 @@
   <script src="ProgrammeerimiseScript.js"></script>
 </head>
 <body>
+<h1>Programmeerimise küsimustik</h1>
 <table>
-  <h1>Programmeerimise küsimustik</h1>
   <tr>
     <td>
       <fieldset>
@@ -41,7 +41,7 @@
       <label for="arvamus">Mida arvad programmeerimise õppimisest?</label>
     </td>
     <td>
-      <input type="text" name="arvamus" id="arvamus" placeholder="" oninput="programmeerimiseOppimisest()"
+      <input type="text" name="arvamus" id="arvamus" placeholder="" oninput="programmeerimiseOppimisest()"/>
     </td>
     <td>
       <div id="vastus2"></div>
@@ -79,6 +79,51 @@
   <tr>
     <td>
       <input type="reset" value="Puhasta" onclick="Puhasta()">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label for="tooriistad">
+        Milliseid programmeerimisega seotud tööriistu oskad nimetada?
+      </label>
+    </td>
+    <td>
+      <input type="text" id="tooriistad" oninput="tooriistadValik()">
+    </td>
+    <td>
+      <div id="vastus5"></div>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <label for="keel">Millist programmeerimiskeelt sooviksid kõige rohkem õppida?</label>
+    </td>
+    <td>
+      <select id="keel" onchange="keelValik()">
+        <option value="JavaScript">JavaScript</option>
+        <option value="Python">Python</option>
+        <option value="Java">Java</option>
+        <option value="C#">C#</option>
+        <option value="PHP">PHP</option>
+        <option value="C++">C++</option>
+      </select>
+    </td>
+    <td>
+      <div id="vastus6"></div>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <input type="button" value="Saada" onclick="Saada()">
+      <input type="reset" value="Puhasta" onclick="Puhasta()">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <h3>Kokkuvõte</h3>
+      <div id="kokkuvote"></div>
     </td>
   </tr>
 </table>
