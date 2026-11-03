@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>ObjektidJaMeetodid</title>
+</head>
+<body>
+
+<h1>Raamatu objekt</h1>
+
+<button
+        onclick="kuvaRaamat()"> Kuva raamatu kirjeldus
+</button>
+<p id="vastus"></p>
+
+<h3>Muuda raamatu aastat</h3>
+<input type="number" id="uusAasta" placeholder="Uus aasta">
+<button onclick="muudaRaamatuAasta()"> Muuda aastat </button>
+<p id="vastusAasta"></p>
+
+<hr>
+
+<h1>Raamatukogu</h1>
+
+<h3>Lisa uus raamat</h3>
+<input type="text" id="pealkiri" placeholder="Pealkiri">
+<input type="text" id="autor" placeholder="Autor">
+<input type="number" id="aasta" placeholder="Aasta">
+<button onclick="lisaUusRaamat()">Lisa raamat</button>
+<p id="vastusLisa"></p>
+
+<h3>Raamatukogu raamatud</h3>
+<button onclick="kuvaKoikRaamatud()">Kuva kõik raamatud</button>
+<div id="vastus2"></div>
+
+<h3>Raamatute koguarv</h3>
+<button onclick="kuvaKoguarv()">Kuva koguarv</button>
+<p id="vastus3"></p>
+
+<h3>Raamatud pärast 2000. aastat</h3>
+<button onclick="kuvaParast2000()">Kuva tulemus</button>
+<p id="vastus4"></p>
+
+<h3>Otsi raamatut aasta järgi</h3>
+<input type="number" id="otsiAasta" placeholder="Sisesta aasta">
+<button onclick="kuvaOtsing()">Otsi raamatut</button>
+<p id="vastus5"></p>
+
+<script src="/tood/JavaScript/ObjektidJaMeetodid.js"></script>
+
+</body>
+</html>
