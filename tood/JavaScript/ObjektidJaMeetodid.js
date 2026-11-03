@@ -5,146 +5,106 @@ let raamat = {
     aasta: 1926,
 
     kuvaKirjeldus() {
-        return this.pealkiri + " - " + this.autor + ", " + this.aasta;
+        return this.pealkiri + ", autor " + this.autor +
+            ", aastal " + this.aasta;
     },
 
     muudaAasta(uusAasta) {
         this.aasta = uusAasta;
     }
 };
+
+
 // 2. Raamatukogu objekt
 let raamatukogu = {
-
-    // Raamatute massiiv
     raamatud: [
         { pealkiri: "Tõde ja õigus I", autor: "A. H. Tammsaare", aasta: 1926 },
-        { pealkiri: "Apteeker Melchior", autor: "Indrek Hargla", aasta: 2010 },
+        { pealkiri: "Apteeker Melchior ja Oleviste mõistatus", autor: "Indrek Hargla", aasta: 2010 },
         { pealkiri: "Kevade", autor: "Oskar Luts", aasta: 1912 },
         { pealkiri: "Abielu ookeanis", autor: "Maimu Berg", aasta: 1979 }
     ],
 
-    kuvaKoikKonsoolis() {
+    // forEach - kuvab kõik raamatud
+    kuvaKõikKonsoolis() {
         this.raamatud.forEach(r => {
-            console.log(r.pealkiri + " - " + r.autor + " (" + r.aasta + ")");
+            console.log(r.pealkiri + " - " + r.autor +
+                " (" + r.aasta + ")");
         });
     },
 
+    // push - lisab uue raamatu
     lisaRaamat(pealkiri, autor, aasta) {
-        this.raamatud.push({ pealkiri: pealkiri, autor: autor, aasta: aasta });
+        this.raamatud.push({
+            pealkiri: pealkiri,
+            autor: autor,
+            aasta: aasta
+        });
     },
 
+    // length - tagastab raamatute arvu
     koguarv() {
         return this.raamatud.length;
     },
 
-    parast2000() {
+    // filter - otsib pärast 2000. aastat ilmunud raamatud
+    pärast2000() {
         return this.raamatud.filter(r => r.aasta > 2000).length;
     },
 
-    otsiAastaJargi(otsitavAasta) {
+    // find - otsib raamatu aasta järgi
+    otsiAastaJärgi(otsitavAasta) {
         return this.raamatud.find(r => r.aasta === otsitavAasta);
     }
 };
-// 3. Funktsioonid HTML nuppude jaoks. Kuvab raamatu kirjelduse
+
+
+// 3. HTML nuppude funktsioonid
+
+// Kuvab ühe raamatu kirjelduse
 function kuvaRaamat() {
-    let tekst = raamat.kuvaKirjeldus();
-
-    console.log(tekst);
-    document.getElementById("vastus").innerHTML = tekst;
+    document.getElementById("vastus").innerHTML =
+        raamat.kuvaKirjeldus();
 }
 
 
-// Muudab raamatu aastat
-function muudaRaamatuAasta() {
-    let uusAasta = Number(document.getElementById("uusAasta").value);
-
-    if (!uusAasta) {
-        document.getElementById("vastusAasta").innerHTML = "Sisesta aasta!";
-        return;
-    }
-
-    let vanaAasta = raamat.aasta;
-    raamat.muudaAasta(uusAasta);
-
-    let tekst = "Aasta muudetud: " + vanaAasta + " -> " + raamat.aasta;
-
-    console.log(tekst);
-    document.getElementById("vastusAasta").innerHTML = tekst;
-}
-// Kuvab kõik raamatud HTML lehel
-function kuvaKoikRaamatud() {
+// Kuvab kõik raamatud
+function kuvaKikRaamatud() {
     let tulemus = "";
 
-    raamatukogu.raamatud.forEach((r, i) => {
-        tulemus += (i + 1) + ". " + r.pealkiri + " - " +
-            r.autor + " (" + r.aasta + ")<br>";
+    raamatukogu.raamatud.forEach(r => {
+        tulemus += r.pealkiri + " - " + r.autor +
+            " (" + r.aasta + ")<br>";
     });
 
-    console.log(tulemus.replaceAll("<br>", "\n"));
     document.getElementById("vastus2").innerHTML = tulemus;
 }
-// Lisab uue raamatu HTML väljadelt
-function lisaUusRaamat() {
-    let pealkiri = document.getElementById("pealkiri").value;
-    let autor = document.getElementById("autor").value;
-    let aasta = Number(document.getElementById("aasta").value);
 
-    if (!pealkiri || !autor || !aasta) {
-        document.getElementById("vastusLisa").innerHTML = "Täida kõik väljad!";
-        return;
-    }
 
-    raamatukogu.lisaRaamat(pealkiri, autor, aasta);
-
-    let tekst = "Raamat lisatud: " + pealkiri + " (" + aasta + ")";
-
-    console.log(tekst);
-    document.getElementById("vastusLisa").innerHTML = tekst;
-
-    document.getElementById("pealkiri").value = "";
-    document.getElementById("autor").value = "";
-    document.getElementById("aasta").value = "";
-}
 // Kuvab raamatute koguarvu
 function kuvaKoguarv() {
-    let arv = raamatukogu.koguarv();
-    let tekst = "Raamatuid kokku: " + arv;
-
-    console.log(tekst);
-    document.getElementById("vastus3").innerHTML = tekst;
+    document.getElementById("vastus3").innerHTML =
+        "Raamatuid kokku: " + raamatukogu.koguarv();
 }
 
 
 // Kuvab pärast 2000. aastat ilmunud raamatute arvu
 function kuvaParast2000() {
-    let arv = raamatukogu.parast2000();
-    let tekst = "Pärast 2000. aastat ilmunud: " + arv + " raamatut";
-
-    console.log(tekst);
-    document.getElementById("vastus4").innerHTML = tekst;
+    document.getElementById("vastus4").innerHTML =
+        "Pärast 2000. aastat ilmunud: " +
+        raamatukogu.pärast2000();
 }
 
 
-// Otsib raamatut aasta järgi
+// Otsib raamatu aasta järgi
 function kuvaOtsing() {
-    let aasta = Number(document.getElementById("otsiAasta").value);
-
-    if (!aasta) {
-        document.getElementById("vastus5").innerHTML = "Sisesta aasta!";
-        return;
-    }
-
-    let leitud = raamatukogu.otsiAastaJargi(aasta);
+    let leitud = raamatukogu.otsiAastaJärgi(2010);
 
     if (leitud) {
-        let tekst = "Leitud raamat: " + leitud.pealkiri +
-            " (" + leitud.autor + ")";
-
-        console.log(tekst);
-        document.getElementById("vastus5").innerHTML = tekst;
+        document.getElementById("vastus5").innerHTML =
+            "Leitud aasta 2010 raamat: " +
+            leitud.pealkiri + " (" + leitud.autor + ")";
     } else {
-        console.log("Raamatut ei leitud");
-        document.getElementById("vastus5").innerHTML = "Raamatut ei leitud";
+        document.getElementById("vastus5").innerHTML =
+            "Ei leitud";
     }
 }
-

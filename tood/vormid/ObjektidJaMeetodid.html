@@ -2,48 +2,25 @@
 <html lang="et">
 <head>
     <meta charset="UTF-8">
-    <title>ObjektidJaMeetodid</title>
+    <title>Objektid ja meetodid</title>
     <script src="../JavaScript/ObjektidJaMeetodid.js"></script>
 </head>
 <body>
+<h1>Raamatu ja raamatukogu ülesanne</h1>
 
-<h1>Raamatu objekt</h1>
+<input type="button" value="Kuva raamatu kirjeldus" onclick="kuvaRaamat()">
+<div id="vastus"></div>
 
-<button onclick="kuvaRaamat()">Kuva raamatu kirjeldus</button>
-<p id="vastus"></p>
-
-<h3>Muuda raamatu aastat</h3>
-<input type="number" id="uusAasta" placeholder="Uus aasta">
-<button onclick="muudaRaamatuAasta()"> Muuda aastat </button>
-<p id="vastusAasta"></p>
-
-<hr>
-
-<h1>Raamatukogu</h1>
-
-<h3>Lisa uus raamat</h3>
-<input type="text" id="pealkiri" placeholder="Pealkiri">
-<input type="text" id="autor" placeholder="Autor">
-<input type="number" id="aasta" placeholder="Aasta">
-<button onclick="lisaUusRaamat()">Lisa raamat</button>
-<p id="vastusLisa"></p>
-
-<h3>Raamatukogu raamatud</h3>
-<button onclick="kuvaKoikRaamatud()">Kuva kõik raamatud</button>
+<input type="button" value="Kuva kõik raamatud" onclick="kuvaKikRaamatud()">
 <div id="vastus2"></div>
 
-<h3>Raamatute koguarv</h3>
-<button onclick="kuvaKoguarv()">Kuva koguarv</button>
-<p id="vastus3"></p>
+<input type="button" value="Raamatute koguarv" onclick="kuvaKoguarv()">
+<div id="vastus3"></div>
 
-<h3>Raamatud pärast 2000. aastat</h3>
-<button onclick="kuvaParast2000()">Kuva tulemus</button>
-<p id="vastus4"></p>
+<input type="button" value="Ilmunud pärast 2000. aastat" onclick="kuvaParast2000()">
+<div id="vastus4"></div>
 
-<h3>Otsi raamatut aasta järgi</h3>
-<input type="number" id="otsiAasta" placeholder="Sisesta aasta">
-<button onclick="kuvaOtsing()">Otsi raamatut</button>
-<p id="vastus5"></p>
-
+<input type="button" value="Otsi aasta järgi (2010)" onclick="kuvaOtsing()">
+<div id="vastus5"></div>
 </body>
 </html>
