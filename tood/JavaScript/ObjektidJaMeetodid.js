@@ -4,12 +4,10 @@ let raamat = {
     autor: "A. H. Tammsaare",
     aasta: 1926,
 
-    // Tagastab raamatu kirjelduse
     kuvaKirjeldus() {
         return this.pealkiri + " - " + this.autor + ", " + this.aasta;
     },
 
-    // Muudab raamatu ilmumise aastat
     muudaAasta(uusAasta) {
         this.aasta = uusAasta;
     }
@@ -25,29 +23,24 @@ let raamatukogu = {
         { pealkiri: "Abielu ookeanis", autor: "Maimu Berg", aasta: 1979 }
     ],
 
-    // Kuvab kõik raamatud konsoolis
     kuvaKoikKonsoolis() {
         this.raamatud.forEach(r => {
             console.log(r.pealkiri + " - " + r.autor + " (" + r.aasta + ")");
         });
     },
 
-    // Lisab uue raamatu massiivi (push)
     lisaRaamat(pealkiri, autor, aasta) {
         this.raamatud.push({ pealkiri: pealkiri, autor: autor, aasta: aasta });
     },
 
-    // Tagastab raamatute koguarvu
     koguarv() {
         return this.raamatud.length;
     },
 
-    // Loendab raamatud, mis on ilmunud pärast 2000. aastat (filter)
     parast2000() {
         return this.raamatud.filter(r => r.aasta > 2000).length;
     },
 
-    // Oma meetod: otsib raamatu kindla aasta järgi (find)
     otsiAastaJargi(otsitavAasta) {
         return this.raamatud.find(r => r.aasta === otsitavAasta);
     }
