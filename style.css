@@ -95,3 +95,37 @@ nav a{
 nav a:hover{
     background-color: deepskyblue;
 }
+.menu-arrows {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#menuMove {
+    font-size: 22px;
+    padding: 5px 25px;
+    cursor: pointer;
+}
+
+#menuNav {
+    overflow: hidden;
+}
+
+#menuNav ul {
+    position: relative;
+    left: 0;
+}
+
+#logo, #pilt {
+    position: relative;
+    cursor: move;
+}
+
+#effectButton {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+#effectText {
+    padding: 10px;
+}

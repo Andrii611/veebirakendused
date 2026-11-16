@@ -5,54 +5,99 @@
     <meta charset="UTF-8">
     <title> Andrii veebirakenduste aluste tööd</title>
     <link rel="stylesheet" href="style.css">
+
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js"
+          integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+          crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.min.js"
+          integrity="sha256-mblSWfbYzaq/f+4akyMhE6XELCou4jbkgPv+JQPER2M="
+          crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+
+      // Piltide liigutamine
+      $('#logo').draggable();
+      $('#pilt').draggable();
+
+      // Menüü liigutamine vasakule ja paremale
+      let suund = "vasak";
+
+      $('#menuMove').click(function() {
+
+        if (suund == "vasak") {
+          $('#menuNav ul').animate({
+            left: '-=650px'
+          }, 500);
+
+          $(this).text('→');
+          suund = "parem";
+        }
+        else {
+          $('#menuNav ul').animate({
+            left: '+=650px'
+          }, 500);
+
+          $(this).text('←');
+          suund = "vasak";
+        }
+      });
+
+      // Uus efekt: teksti peitmine ja näitamine
+      $('#effectButton').click(function() {
+        $('#effectText').slideToggle(500);
+      });
+
+    });
+  </script>
 </head>
 <body>
 <!--veebilehe sisu-->
 <!--päis-->
 <header>
   <h1>
-    <img src="Amg_Stechkin.png" alt="Logo">
+    <img src="Amg_Stechkin.png" alt="Logo" id="logo">
     Andrii veebirakenduste aluste tööd
   </h1>
 </header>
 <!--navigeerimismenüü-->
-<nav>
+<div class="menu-arrows">
+  <button id="menuMove">←</button>
+</div>
+
+<nav id="menuNav">
   <ul>
-    <li>
-      <a href="index.html">Kodu</a>
-    </li>
-
-    <li>
-      <a href="Tutvustus.html">Tutvustus</a>
-    </li>
-
-    <li>
-      <a href="lingid.html">Kasulikud lingid</a>
-    </li>
-
-    <li>
-      <a href="TehtudTööd.html">Tehtud tööd</a>
-    </li>
-
-    <li>
-      <a href="Meedia.html">Meedia </a>
-    </li>
+    <li><a href="index.html">Kodu</a></li>
+    <li><a href="Tutvustus.html">Tutvustus</a></li>
+    <li><a href="lingid.html">Kasulikud lingid</a></li>
+    <li><a href="TehtudTööd.html">Tehtud tööd</a></li>
+    <li><a href="Meedia.html">Meedia</a></li>
   </ul>
 </nav>
 <!--põhisisu-->
 <main>
   <section>
     <h2>Tere tulemast!</h2>
-    <p> See on index leht mis on tehtus 1. veebirakenduste tunnis!
-    Palun vajuta teise lingi peale ning kontrolli et sisu on täide
+    <p>
+      See on index leht mis on tehtus 1. veebirakenduste tunnis!
+      Palun vajuta teise lingi peale ning kontrolli et sisu on täide
     </p>
   </section>
   <section>
     <h2>Põnev pilt</h2>
     <div>
-      <img src= "Amg_Stechkin.png" alt= "See on ise tehtud pilt">
+      <img src="Amg_Stechkin.png" alt="See on ise tehtud pilt" id="pilt">
     </div>
   </section>
+  <section>
+    <h2>jQuery uus efekt</h2>
+
+    <button id="effectButton">Vajuta siia</button>
+
+    <p id="effectText">
+      See tekst ilmub ja kaob kasutades jQuery slideToggle() efekti!
+    </p>
+  </section>
+
 </main>
 <!--jalus-->
 <footer>

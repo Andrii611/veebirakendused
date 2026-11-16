@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery kasutamine</title>
+    <link rel="stylesheet" href="queryStyle.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#logo').draggable();
+            $('#pilt').draggable();
+            let suund = "vasak";
+            $('#menuMove').click(function() {
+                if (suund == "vasak") {
+                    $('#menuNav ul').animate({
+                        left: '-=150px'
+                    }, 500);
+                    $(this).text('→');
+                    suund = "parem";
+                }
+                else {
+                    $('#menuNav ul').animate({
+                        left: '+=150px'
+                    }, 500);
+                    $(this).text('←');
+                    suund = "vasak";
+                }
+            });
+        });
+    </script>
+</head>
+<body onload="start()">
+<header>
+    <h1>jQuery kasutamine</h1>
+</header>
+<main>
+    <input type="button" value="--->" id="paremale"
+           onclick="$('#sisu, h2, img').animate({left: '500px'}, 1000);
+    $(this).hide();
+    $('#vasakule').show();">
+
+    <input type="button" value="<---" id="vasakule" style="display:none"
+           onclick="$('#sisu, h2, img').animate({left: '0px'}, 1000);
+    $(this).hide();
+    $('#paremale').show();">
+
+    <input type="button" value="Peida" id="peida">
+    <input type="button" value="Kuva" id="kuva">
+    <section>
+        <h2>$( document ).ready()</h2>
+        <div id="sisu">
+            A page can't be manipulated safely until the document is "ready." jQuery detects this state of readiness for you. Code included inside $( document ).ready() will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute. Code included inside $( window ).on( "load", function() { ... }) will run once the entire page (images or iframes), not just the DOM, is ready.
+        </div>
+    </section>
+    <section>
+        <div id="vastus"></div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcCzyccLp9JDijaBJiMSOYxJzHEQFvOrjaqwSo3FA5gw&s=10" alt="" id="pilt">
+    </section>
+</main>
+
+</body>
+</html>
