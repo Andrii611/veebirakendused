@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Programmeerimise küsimustik</title>
   <link rel="stylesheet" href="kysimustikStyle.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="ProgrammeerimiseScript.js"></script>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
           integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
           crossorigin="anonymous"></script>
   <script>  $(function(){
@@ -72,6 +72,7 @@
 </head>
 <body>
 <h1>Programmeerimise küsimustik</h1>
+<form id="programmeerimiseVorm">
 <table>
   <tr>
     <td>
@@ -95,6 +96,9 @@
         <br>
 
       </fieldset>
+      <div class="viga" id="viga1" style="color:red;">
+        Palun vali vähemalt üks programmeerimiskeel!
+      </div>
     </td>
     <td>
       <div id="vastus1"></div>
@@ -106,6 +110,9 @@
     </td>
     <td>
       <input type="text" name="arvamus" id="arvamus" placeholder="" oninput="programmeerimiseOppimisest()"/>
+      <div class="viga" id="viga2" style="color:red;">
+        Palun sisesta oma arvamus!
+      </div>
     </td>
     <td>
       <div id="vastus2"></div>
@@ -119,6 +126,9 @@
     </td>
     <td>
       0<input type="range" id="tund" min="0" max="50" onchange="rangeValik()">50
+      <div class="viga" id="viga3" style="color:red;">
+        Palun vali tundide arv!
+      </div>
     </td>
     <td>
       <div id="vastus3"></div>
@@ -134,6 +144,9 @@
 
       <input type="radio" name="programmeeridaValik" id="ei" value="ei" onclick="programmeeridaValik()">
       <label for="ei">Ei</label>
+      <div class="viga" id="viga4" style="color:red;">
+        Palun vali Jah või Ei!
+      </div>
     </td>
     <td>
       <div id="vastus4"></div>
@@ -153,6 +166,9 @@
     </td>
     <td>
       <input type="text" id="tooriistad" oninput="tooriistadValik()">
+      <div class="viga" id="viga5" style="color:red;">
+        Palun sisesta tööriistad!
+      </div>
     </td>
     <td>
       <div id="vastus5"></div>
@@ -172,6 +188,9 @@
         <option value="PHP">PHP</option>
         <option value="C++">C++</option>
       </select>
+      <div class="viga" id="viga6" style="color:red;">
+        Palun vali programmeerimiskeel!
+      </div>
     </td>
     <td>
       <div id="vastus6"></div>
@@ -180,8 +199,9 @@
 
   <tr>
     <td>
+      <input type="button" value="Kontrolli" onclick="Kontrolli()">
       <input type="button" value="Saada" onclick="Saada()">
-      <input type="reset" value="Puhasta" onclick="Puhasta()">
+      <input type="button" value="Puhasta" onclick="Puhasta()">
     </td>
   </tr>
   <tr>
@@ -191,6 +211,7 @@
     </td>
   </tr>
 </table>
+</form>
 
 
 </body>

@@ -112,3 +112,110 @@ function Puhasta() { //puhasta
     document.getElementById("jah").checked = false;
     document.getElementById("ei").checked = false;
 }
+function Kontrolli() {
+
+    let valid = true;
+
+    // 1. Checkbox
+    if ($('input[name="lemmik"]:checked').length === 0) {
+        $('#viga1').show();
+        valid = false;
+    } else {
+        $('#viga1').hide();
+    }
+
+    // 2. Arvamus
+    if ($('#arvamus').val().trim() === "") {
+        $('#viga2').show();
+        valid = false;
+    } else {
+        $('#viga2').hide();
+    }
+
+    // 3. Range
+    $('#viga3').hide();
+
+    // 4. Radio
+    if ($('input[name="programmeeridaValik"]:checked').length === 0) {
+        $('#viga4').show();
+        valid = false;
+    } else {
+        $('#viga4').hide();
+    }
+
+    // 5. Tööriistad
+    if ($('#tooriistad').val().trim() === "") {
+        $('#viga5').show();
+        valid = false;
+    } else {
+        $('#viga5').hide();
+    }
+
+    // 6. Select
+    $('#viga6').hide();
+
+    if (valid) {
+        alert("Kõik väljad on korrektselt täidetud!");
+    } else {
+        alert("Palun täida kõik vajalikud väljad!");
+    }
+
+    return valid;
+}
+$(function() {
+
+    $('.viga').hide();
+
+    $('#programmeerimiseVorm').submit(function(event) {
+
+        let valid = true;
+
+        // 1. Checkbox
+        if ($('input[name="lemmik"]:checked').length === 0) {
+            $('#viga1').show();
+            valid = false;
+        } else {
+            $('#viga1').hide();
+        }
+
+        // 2. Arvamus
+        if ($('#arvamus').val().trim() === "") {
+            $('#viga2').show();
+            valid = false;
+        } else {
+            $('#viga2').hide();
+        }
+
+        // 3. Range
+        $('#viga3').hide();
+
+        // 4. Radio
+        if ($('input[name="programmeeridaValik"]:checked').length === 0) {
+            $('#viga4').show();
+            valid = false;
+        } else {
+            $('#viga4').hide();
+        }
+
+        // 5. Tööriistad
+        if ($('#tooriistad').val().trim() === "") {
+            $('#viga5').show();
+            valid = false;
+        } else {
+            $('#viga5').hide();
+        }
+
+        // 6. Select
+        $('#viga6').hide();
+
+        if (!valid) {
+            event.preventDefault();
+        } else {
+            event.preventDefault();
+            Saada();
+            alert("Ankeet on edukalt täidetud!");
+        }
+
+    });
+
+});
