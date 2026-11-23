@@ -5,6 +5,70 @@
     <title>Programmeerimise küsimustik</title>
   <link rel="stylesheet" href="kysimustikStyle.css">
   <script src="ProgrammeerimiseScript.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+  <script>  $(function(){
+    // peidame vead
+    $('.viga').hide();
+
+    // puhastusnupp
+    $('#puhasta').click(function(){
+      $('#muusikaVorm')[0].reset();
+      $('.viga').hide();
+    });
+
+    // valideerimine, kui vorm on saadetud
+    $('#muusikaVorm').submit(function(event){
+      let valid = true;
+
+      // 1. Checkbox
+      if($('input[name="valik"]:checked').length === 0){
+        $('#viga1').show();
+        valid = false;
+      } else { $('#viga1').hide(); }
+
+      // 2. Textarea
+      if($('#musik').val().trim() === ""){
+        $('#viga2').show();
+        valid = false;
+      } else { $('#viga2').hide(); }
+
+      // 3. Number (0–24)
+      let tunnid = $('#musiktund').val();
+      if(tunnid === "" || isNaN(tunnid) || tunnid < 0 || tunnid > 24){
+        $('#viga3').show();
+        valid = false;
+      } else { $('#viga3').hide(); }
+
+      // 4. Radio
+      if($('input[name="raadio"]:checked').length === 0){
+        $('#viga4').show();
+        valid = false;
+      } else { $('#viga4').hide(); }
+
+      // 5. Text (ainult tähed)
+      let tekst = $('#kysi5').val().trim();
+      if(tekst === "" || !/^[a-zA-Z\s]+$/.test(tekst)){
+        $('#viga5').show();
+        valid = false;
+      } else { $('#viga5').hide(); }
+
+      // 6. Select
+      if($('#muusikaliik').val() === ""){
+        $('#viga6').show();
+        valid = false;
+      } else { $('#viga6').hide(); }
+
+      // kui on vead, siis ei ole vaja vormi saada
+      if(!valid){
+        event.preventDefault();
+      } else {
+        alert("Vorm on edukalt saadetud!");
+      }
+    });
+  });
+  </script>
 </head>
 <body>
 <h1>Programmeerimise küsimustik</h1>

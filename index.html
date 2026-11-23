@@ -20,31 +20,29 @@
       $('#pilt').draggable();
 
       // Menüü liigutamine vasakule ja paremale
-      let suund = "vasak";
+      $('#moveLeft').click(function() {
+        $('#menuNav ul').animate({
+          left: '-=650px'
+        }, 500);
+      });
 
-      $('#menuMove').click(function() {
-
-        if (suund == "vasak") {
-          $('#menuNav ul').animate({
-            left: '-=650px'
-          }, 500);
-
-          $(this).text('→');
-          suund = "parem";
-        }
-        else {
-          $('#menuNav ul').animate({
-            left: '+=650px'
-          }, 500);
-
-          $(this).text('←');
-          suund = "vasak";
-        }
+      $('#moveRight').click(function() {
+        $('#menuNav ul').animate({
+          left: '+=650px'
+        }, 500);
       });
 
       // Uus efekt: teksti peitmine ja näitamine
       $('#effectButton').click(function() {
         $('#effectText').slideToggle(500);
+      });
+
+      $('#guideShow').click(function() {
+        $('#guideContent').slideDown(500);
+      });
+
+      $('#guideHide').click(function() {
+        $('#guideContent').slideUp(500);
       });
 
     });
@@ -61,7 +59,8 @@
 </header>
 <!--navigeerimismenüü-->
 <div class="menu-arrows">
-  <button id="menuMove">←</button>
+  <button id="moveLeft">← Vasakule</button>
+  <button id="moveRight">Paremale →</button>
 </div>
 
 <nav id="menuNav">
@@ -69,8 +68,15 @@
     <li><a href="index.html">Kodu</a></li>
     <li><a href="Tutvustus.html">Tutvustus</a></li>
     <li><a href="lingid.html">Kasulikud lingid</a></li>
+    <ul id="menyy">
     <li><a href="TehtudTööd.html">Tehtud tööd</a></li>
+      <li><a href="tood/Map/maparea.html">Map Area</a></li>
+      <li><a href="tood/vormid/ObjektidJaMeetodid.html">ObjektidJaMeetodid Ulesanne</a></li>
+      <li><a href="tood/jQuery/jQuery.html">jQuery</a></li>
+      </li>
+    </ul>
     <li><a href="Meedia.html">Meedia</a></li>
+    </ul>
   </ul>
 </nav>
 <!--põhisisu-->
@@ -82,6 +88,38 @@
       Palun vajuta teise lingi peale ning kontrolli et sisu on täide
     </p>
   </section>
+
+  <section class="jquery-juhend">
+
+    <h2>jQuery kasutusjuhend</h2>
+
+    <p>Veebilehel on rakendatud mitmed jQuery efektid. Proovi neid!</p>
+
+    <div class="juhend-nupud">
+      <button id="guideShow">NÄITA</button>
+      <button id="guideHide">PEIDA</button>
+    </div>
+
+    <div id="guideContent">
+
+      <h3>Klikki pealkirjale, et saada juhendeid!</h3>
+
+      <p>Teksti värvi muutmine (animate)</p>
+
+      <p>Liikumine ekraanil (animate)</p>
+
+      <p>jQuery sektsiooni peitmine/näitamine (slideToggle)</p>
+
+      <p>Pildi kuvamine ja peitmine (fadeIn, fadeOut)</p>
+
+      <p>Teksti suuruse muutmine (animate)</p>
+
+      <p>Elementide lohistamine (draggable)</p>
+
+    </div>
+
+  </section>
+
   <section>
     <h2>Põnev pilt</h2>
     <div>
