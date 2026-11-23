@@ -21,13 +21,13 @@
 
       // Menüü liigutamine vasakule ja paremale
       $('#moveLeft').click(function() {
-        $('#menuNav ul').animate({
+        $('#menuNav > ul').animate({
           left: '-=650px'
         }, 500);
       });
 
       $('#moveRight').click(function() {
-        $('#menuNav ul').animate({
+        $('#menuNav > ul').animate({
           left: '+=650px'
         }, 500);
       });
@@ -68,15 +68,17 @@
     <li><a href="index.html">Kodu</a></li>
     <li><a href="Tutvustus.html">Tutvustus</a></li>
     <li><a href="lingid.html">Kasulikud lingid</a></li>
-    <ul id="menyy">
-    <li><a href="TehtudTööd.html">Tehtud tööd</a></li>
-      <li><a href="tood/Map/maparea.html">Map Area</a></li>
-      <li><a href="tood/vormid/ObjektidJaMeetodid.html">ObjektidJaMeetodid Ulesanne</a></li>
-      <li><a href="tood/jQuery/jQuery.html">jQuery</a></li>
-      </li>
-    </ul>
+
+    <li>
+      <ul id="menyy">
+        <li><a href="tood/Map/maparea.html">Map Area</a></li>
+        <li><a href="tood/vormid/ObjektidJaMeetodid.html">ObjektidJaMeetodid Ülesanne</a></li>
+        <li><a href="tood/jQuery/jQuery.html">jQuery</a></li>
+      </ul>
+      <a href="TehtudTööd.html">Tehtud tööd</a>
+    </li>
+
     <li><a href="Meedia.html">Meedia</a></li>
-    </ul>
   </ul>
 </nav>
 <!--põhisisu-->
